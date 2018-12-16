@@ -38,6 +38,13 @@
                 android:layout_height="45dp"
                 android:text="포그라운드 서비스 액티비티"/>
 
+        <Button
+                android:id="@+id/btnServiceActivity04"
+                android:layout_marginTop="15dp"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:text="바인드 서비스 액티비티"/>
+
     </LinearLayout>
 
 </layout>

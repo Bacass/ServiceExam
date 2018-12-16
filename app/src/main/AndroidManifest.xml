@@ -43,6 +43,15 @@
                 android:enabled="true"
                 android:exported="true">
         </service>
+
+        <activity android:name=".ServiceActivity04">
+        </activity>
+
+        <service
+                android:name=".MyBindService"
+                android:enabled="true"
+                android:exported="true">
+        </service>
     </application>
 
 </manifest>
