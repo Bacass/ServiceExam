@@ -23,6 +23,16 @@
                 android:layout_height="45dp"
                 android:text="쓰레드 정지"/>
 
+        <TextView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="쓰레드를 동작시킨 상태에서 back 키로 나가면 액티비티는 종료되지만 쓰레드는 계속 동작한다.
+                \n다시 액티비티로 들어와서 쓰레드 정지를 시켜도 정지되지 않는다.
+                \n이유는 back키를 눌러 나갈때 쓰레드의 객체는 사라지기 때문이다.
+                \n다시 진입해서 쓰레드를 또 시작하면 여러개의 쓰레드가 동작할 수도 있는 것이다.
+                \n이것이 쓰레드의 문제점이다."/>
+
 
     </LinearLayout>
 </layout>
