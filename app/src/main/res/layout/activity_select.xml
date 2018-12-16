@@ -18,11 +18,25 @@
                 android:text="쓰레드 액티비티"/>
 
         <Button
-                android:id="@+id/btnServiceActivity"
+                android:id="@+id/btnServiceActivity01"
                 android:layout_marginTop="15dp"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
-                android:text="써비스 액티비티"/>
+                android:text="서비스 액티비티"/>
+
+        <Button
+                android:id="@+id/btnServiceActivity02"
+                android:layout_marginTop="15dp"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:text="인텐트 서비스 액티비티"/>
+
+        <Button
+                android:id="@+id/btnServiceActivity03"
+                android:layout_marginTop="15dp"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:text="포그라운드 서비스 액티비티"/>
 
     </LinearLayout>
 

@@ -4,12 +4,12 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import com.lee.serviceexam.databinding.ActivityMainBinding
+import com.lee.serviceexam.databinding.ActivityThreadBinding
 
 class ThreadActivity : AppCompatActivity() {
     val TAG: String = "Lee"
 
-    var mBinding: ActivityMainBinding? = null
+    var mBinding: ActivityThreadBinding? = null
     var mThread: Thread? = null
 
     var mCount: Int = 0

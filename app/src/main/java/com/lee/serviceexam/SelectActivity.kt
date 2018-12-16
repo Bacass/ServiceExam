@@ -19,8 +19,18 @@ class SelectActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        mBinding?.btnServiceActivity?.setOnClickListener {
+        mBinding?.btnServiceActivity01?.setOnClickListener {
             val intent = Intent(this@SelectActivity, ServiceActivity01::class.java)
+            startActivity(intent)
+        }
+
+        mBinding?.btnServiceActivity02?.setOnClickListener {
+            val intent = Intent(this@SelectActivity, ServiceActivity02::class.java)
+            startActivity(intent)
+        }
+
+        mBinding?.btnServiceActivity03?.setOnClickListener {
+            val intent = Intent(this@SelectActivity, ServiceActivity03::class.java)
             startActivity(intent)
         }
     }
