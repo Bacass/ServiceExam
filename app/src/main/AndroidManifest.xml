@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.lee.serviceexam">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -35,7 +37,9 @@
 
         <activity android:name=".ServiceActivity02">
         </activity>
-        <activity android:name=".ServiceActivity03">
+        <activity
+                android:name=".ServiceActivity03"
+                android:launchMode="singleTop">
         </activity>
 
         <service

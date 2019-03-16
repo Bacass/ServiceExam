@@ -76,7 +76,7 @@ class MyForegroundService : Service() {
         builder.setContentText("포그라운드 서비스 실행 중")
 
         // 노티를 클릭했을때의 처리를 위한 pendingIntent
-        val notificationIntent = Intent(this, SelectActivity::class.java)
+        val notificationIntent = Intent(this, ServiceActivity03::class.java)
         val pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0)
         builder.setContentIntent(pendingIntent)
 

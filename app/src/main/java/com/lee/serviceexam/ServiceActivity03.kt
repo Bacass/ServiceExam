@@ -23,6 +23,10 @@ class ServiceActivity03 : AppCompatActivity() {
         mBinding?.btnStartService?.setOnClickListener {
             startService()
         }
+
+        mBinding?.btnStopService?.setOnClickListener {
+            stopService()
+        }
     }
 
     fun startService() {
@@ -32,5 +36,10 @@ class ServiceActivity03 : AppCompatActivity() {
         } else {
             startService(intent)
         }
+    }
+
+    fun stopService() {
+        var intent = Intent(this@ServiceActivity03, MyForegroundService::class.java)
+        stopService(intent)
     }
 }
