@@ -70,7 +70,7 @@ class MyForegroundService : Service() {
 
     private fun startForegroundService() {
         // default 채널 ID로 알림 생성
-        val builder = NotificationCompat.Builder(this, "channelID_0123")
+        val builder = NotificationCompat.Builder(this, "channelID_10294")
         builder.setSmallIcon(R.mipmap.ic_launcher)
         builder.setContentTitle("포그라운드 서비스")
         builder.setContentText("포그라운드 서비스 실행 중")
@@ -85,10 +85,13 @@ class MyForegroundService : Service() {
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             manager.createNotificationChannel(
                 NotificationChannel(
-                    "channelID_0123",
-                    "기본 채널",
-                    NotificationManager.IMPORTANCE_DEFAULT
-                )
+                    "channelID_10294",
+                    "기본채널",
+                    NotificationManager.IMPORTANCE_LOW
+                ).apply {
+                    vibrationPattern = longArrayOf(0)
+                    enableVibration(true)
+                }
             )
         }
 

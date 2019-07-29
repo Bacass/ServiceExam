@@ -3,6 +3,12 @@ package com.lee.serviceexam
 import android.app.IntentService
 import android.content.Intent
 import android.util.Log
+import android.widget.Toast
+import android.R.id.message
+import android.os.Handler
+import android.os.Looper
+
+
 
 
 /**
@@ -15,6 +21,7 @@ class MyIntentService : IntentService("MyIntentService") {
     val TAG = "Lee"
 
     override fun onHandleIntent(intent: Intent?) {
+        Log.d(TAG, "인텐트 서비스 onHandleIntent")
         for (i in 0..5) {
             try {
                 Log.d(TAG, "인텐트 서비스 동작중 $i")
@@ -23,5 +30,9 @@ class MyIntentService : IntentService("MyIntentService") {
                 Thread.currentThread().interrupt()
             }
         }
+
+        Handler(Looper.getMainLooper()).post(Runnable {
+            Toast.makeText(this@MyIntentService, "인텐트 서비스 동작", Toast.LENGTH_SHORT).show()
+        })
     }
 }
