@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.lee.serviceexam">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.lee.serviceexam">
 
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
             android:allowBackup="true"
@@ -11,51 +12,54 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".SelectActivity">
+        <activity
+                android:name=".SelectActivity"
+                android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ThreadActivity">
-        </activity>
+        <activity android:name=".ThreadActivity" />
 
         <service
                 android:name=".MyService"
                 android:enabled="true"
-                android:exported="true">
-        </service>
+                android:exported="true" />
 
-        <activity android:name=".ServiceActivity01">
-        </activity>
+        <activity
+                android:name=".ServiceActivity01"
+                android:exported="false" />
 
         <service
                 android:name=".MyIntentService"
-                android:exported="false">
-        </service>
+                android:exported="false" />
 
-        <activity android:name=".ServiceActivity02">
-        </activity>
+        <activity android:name=".ServiceActivity02" />
         <activity
                 android:name=".ServiceActivity03"
-                android:launchMode="singleTop">
-        </activity>
+                android:launchMode="singleTop" />
 
+        <!--
+            Android 14의 변경사항으로, foreground service를 AndroidManifest에 선언할 때,
+            android:foregroundServiceType 항목을 필수로 명시하도록 변경됨.
+            만약 입력하지 않으면 startForeground()를 호출하여 서비스를 실행시킬 때 MissingForegroundServiceTypeException 이 발생됨.
+            foregroundServiceType 에 지정된 값에 따라 필요한 권한이 있음.
+        -->
         <service
                 android:name=".MyForegroundService"
+                android:foregroundServiceType="shortService"
                 android:enabled="true"
-                android:exported="true">
-        </service>
+                android:exported="true"
+                tools:ignore="ForegroundServicePermission" />
 
-        <activity android:name=".ServiceActivity04">
-        </activity>
+        <activity android:name=".ServiceActivity04" />
 
         <service
                 android:name=".MyBindService"
                 android:enabled="true"
-                android:exported="true">
-        </service>
+                android:exported="true" />
     </application>
 
 </manifest>
