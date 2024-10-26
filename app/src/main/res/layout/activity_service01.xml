@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="25dp"
             tools:context=".ThreadActivity"
             android:orientation="vertical">
 
@@ -14,14 +14,14 @@
                 android:id="@+id/btnStartService"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
-                android:text="서비스 시작"/>
+                android:text="서비스 시작" />
 
         <Button
                 android:id="@+id/btnStopService"
                 android:layout_marginTop="15dp"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
-                android:text="서비스 정지"/>
+                android:text="서비스 정지" />
 
         <TextView
                 android:layout_marginTop="50dp"
@@ -33,7 +33,7 @@
                 \n미디어플레이어를 동작시키고 화면을 꺼도 계속 재생되도록 할때 이용된다.
                 \nSTART_STICKY : Service가 강제 종료되었을 경우 시스템이 다시 Service를 재시작 시켜 주지만
                 \nintent 값을 null로 초기화 시켜서 재시작한다.
-                \n때문에 서비스 시작과 서비스 정지때마다 intent를 새로 만들어서 보내도록 소스가 작성되었다."/>
+                \n때문에 서비스 시작과 서비스 정지때마다 intent를 새로 만들어서 보내도록 소스가 작성되었다." />
 
 
     </LinearLayout>
