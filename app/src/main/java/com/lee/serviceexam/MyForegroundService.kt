@@ -8,6 +8,7 @@ import android.app.NotificationManager
 import android.app.NotificationChannel
 import android.os.Build
 import android.app.PendingIntent
+import android.app.PendingIntent.FLAG_IMMUTABLE
 import android.content.Context
 import android.support.v4.app.NotificationCompat
 
@@ -77,7 +78,7 @@ class MyForegroundService : Service() {
 
         // 노티를 클릭했을때의 처리를 위한 pendingIntent
         val notificationIntent = Intent(this, ServiceActivity03::class.java)
-        val pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0)
+        val pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, FLAG_IMMUTABLE)
         builder.setContentIntent(pendingIntent)
 
         // 오레오에서는 알림 채널을 매니저에 생성해야 한다

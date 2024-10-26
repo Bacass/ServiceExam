@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         package="com.lee.serviceexam">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -27,7 +28,9 @@
                 android:enabled="true"
                 android:exported="true" />
 
-        <activity android:name=".ServiceActivity01" />
+        <activity
+                android:name=".ServiceActivity01"
+                android:exported="false" />
 
         <service
                 android:name=".MyIntentService"
@@ -38,10 +41,18 @@
                 android:name=".ServiceActivity03"
                 android:launchMode="singleTop" />
 
+        <!--
+            Android 14의 변경사항으로, foreground service를 AndroidManifest에 선언할 때,
+            android:foregroundServiceType 항목을 필수로 명시하도록 변경됨.
+            만약 입력하지 않으면 startForeground()를 호출하여 서비스를 실행시킬 때 MissingForegroundServiceTypeException 이 발생됨.
+            foregroundServiceType 에 지정된 값에 따라 필요한 권한이 있음.
+        -->
         <service
                 android:name=".MyForegroundService"
+                android:foregroundServiceType="shortService"
                 android:enabled="true"
-                android:exported="true" />
+                android:exported="true"
+                tools:ignore="ForegroundServicePermission" />
 
         <activity android:name=".ServiceActivity04" />
 
